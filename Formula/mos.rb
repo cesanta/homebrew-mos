@@ -4,7 +4,7 @@ class Mos < Formula
   desc "Mongoose OS command-line tool"
   homepage "https://mongoose-os.com/"
   url "https://github.com/cesanta/mongoose-os/archive/1.23.tar.gz"
-  sha256 "0edff29a6d3b67ee6e7868071be6bb96aab270af4ea4016f19b23ae13720043f"
+  sha256 "7e8c321370f57923f50422faa3d15839c034030649dcd463ca744db71cfd7590"
   head ""
 
   depends_on "go" => :build
