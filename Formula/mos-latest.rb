@@ -1,4 +1,4 @@
-class Mos < Formula
+class MosLatest < Formula
   include Language::Python::Virtualenv
 
   # update_hb begin
