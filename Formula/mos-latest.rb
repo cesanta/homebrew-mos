@@ -2,11 +2,11 @@ class Mos < Formula
   include Language::Python::Virtualenv
 
   # update_hb begin
-  desc "Mongoose OS command-line tool"
+  desc "Mongoose OS command-line tool (latest)"
   homepage "https://mongoose-os.com/"
-  url "https://github.com/cesanta/mos-tool/archive/2.4.2.tar.gz"
-  sha256 "12003fcd48a1b61ce84d858810285fbea23f3fe5166f6ffca7dda0deebc09e37"
-  version "2.4.2"
+  url "https://github.com/cesanta/mos-tool/archive/a71e03dfe3c19fac9c4f7f22da2bcf28a55d6dfa.tar.gz"
+  sha256 "3713b47f5a977d9f1e6f1cff63d254f348c518f33f819d8c5e49835e84515fd2"
+  version "201808212048"
   head ""
   # update_hb end
 
