@@ -35,6 +35,11 @@ class Mos < Formula
   end
   # }}}
 
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/source/s/six/six-1.11.0.tar.gz"
+    sha256 "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
+  end
+
   def install
     ENV["GOPATH"] = buildpath
     ENV["GOOS"] = "darwin"
@@ -44,7 +49,7 @@ class Mos < Formula
 
     # Create virtualenv and install GitPython (with its deps) in it
     venv = virtualenv_create(libexec)
-    %w[smmap2 gitdb2 GitPython].each do |r|
+    %w[smmap2 gitdb2 GitPython six].each do |r|
       venv.pip_install resource(r)
     end
 
@@ -62,7 +67,7 @@ class Mos < Formula
       # The build will be performed not from a git repo, so we have to specify
       # version and build id manually. Use "brew" as a distro name so that mos
       # won't update itself.
-      build_id = format("%s+???~brew", version)
+      build_id = format("%s~brew", version)
       File.open(path/"mos/version/version", "w") { |file| file.write(version) }
       File.open(path/"mos/version/build_id", "w") { |file| file.write(build_id) }
 
