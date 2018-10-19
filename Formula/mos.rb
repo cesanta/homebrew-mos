@@ -15,6 +15,7 @@ class Mos < Formula
   depends_on "libftdi" => :build
   depends_on "libusb" => :build
   depends_on "libusb-compat" => :build
+  depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on "python" => :build if MacOS.version <= :snow_leopard
 
@@ -74,7 +75,7 @@ class Mos < Formula
       system "govendor", "sync"
       system "go", "install", "cesanta.com/vendor/github.com/jteeuwen/go-bindata/go-bindata"
       system "go", "install", "cesanta.com/vendor/github.com/elazarl/go-bindata-assetfs/go-bindata-assetfs"
-      system "go", "generate", "./..."
+      system "make", "generate"
       system "go", "build", "-o", bin/"mos"
       prefix.install_metafiles
     end
