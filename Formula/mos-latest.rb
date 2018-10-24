@@ -4,9 +4,9 @@ class MosLatest < Formula
   # update_hb begin
   desc "Mongoose OS command-line tool (latest)"
   homepage "https://mongoose-os.com/"
-  url "https://github.com/cesanta/mos-tool/archive/b3343e09437acfcff0c02fd5ca1c9e4b7f1fcbdb.tar.gz"
-  sha256 "7ebab1b2660dd372ba02931178f941385578fe6ef756fd24592a865508d47791"
-  version "201810191116"
+  url "https://github.com/cesanta/mos-tool/archive/488f06e3833d595d28f05e42105fe108e30d5ab5.tar.gz"
+  sha256 "626db6e07faeb22bb226e28ce70e0ec7f853be3745425e5768db93e6765ae916"
+  version "201810240904"
   head ""
   # update_hb end
 
