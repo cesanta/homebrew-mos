@@ -43,12 +43,13 @@ class Mos < Formula
       File.open(path/"mos/pkg.build_id", "w") { |file| file.write(build_id) }
 
       system "govendor", "sync"
-      system "make", "build"
+      system "make", "generate"
+      system "go", "build", "-o", bin/"mos"
       prefix.install_metafiles
     end
   end
 
   test do
-    system bin/"mos", "--version"
+    system bin/"mos", "version"
   end
 end

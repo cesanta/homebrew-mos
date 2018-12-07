@@ -43,7 +43,8 @@ class MosLatest < Formula
       File.open(path/"mos/pkg.build_id", "w") { |file| file.write(build_id) }
 
       system "govendor", "sync"
-      system "make", "build"
+      system "make", "generate"
+      system "go", "build", "-o", bin/"mos"
       prefix.install_metafiles
     end
   end
