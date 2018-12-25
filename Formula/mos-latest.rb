@@ -17,12 +17,7 @@ class MosLatest < Formula
   depends_on "libusb-compat" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build if MacOS.version <= :snow_leopard
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/source/s/six/six-1.11.0.tar.gz"
-    sha256 "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
-  end
+  depends_on "python" => :build
 
   def install
     ENV["GOPATH"] = buildpath
