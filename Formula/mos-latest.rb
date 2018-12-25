@@ -8,6 +8,11 @@ class MosLatest < Formula
   sha256 "51b185ab015fc588cd0bef23fd776864ad631b9c07912ac516204dc56710674a"
   version "201812221250"
   head ""
+
+  bottle do
+    root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos"
+    cellar :any
+  end
   # update_hb end
 
   depends_on "go" => :build
