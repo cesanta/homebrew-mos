@@ -25,6 +25,8 @@ class Mos < Formula
   depends_on "pkg-config" => :build
   depends_on "python" => :build
 
+  conflicts_with "mos-latest", :because => "Use mos or mos-latest, not both"
+
   def install
     ENV["GOPATH"] = buildpath
     ENV["GOOS"] = "darwin"
