@@ -44,14 +44,15 @@ class MosLatest < Formula
       File.open(path/"mos/pkg.build_id", "w") { |file| file.write(build_id) }
 
       # GoVendor pulls a lot of packages, it makes sense to cache them between builds.
-      cachedir = "/tmp/.mos-gocache/"
-      if(File.directory?(cachedir))
-        system "rsync", "-a", "--delete", cachedir, buildpath+".cache/"
+      cachefile = "/tmp/mos-govendor-cache.tar"
+      if(File.readable?(cachefile))
+        system "tar", "-C", buildpath, "-xf", cachefile
       else
         ohai "Note: Go package cache does not exist, next step may take a long time"
       end
       system "govendor", "sync"
-      system "rsync", "-a", "--delete", buildpath+".cache/", cachedir
+      FileUtils.rm_f(cachefile)
+      system "tar", "-C", buildpath, "-cf", cachefile, ".cache"
       system "make", "generate"
       system "go", "build", "-o", bin/"mos"
       prefix.install_metafiles
