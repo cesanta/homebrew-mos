@@ -54,6 +54,7 @@ class MosLatest < Formula
       FileUtils.rm_f(cachefile)
       system "tar", "-C", buildpath, "-cf", cachefile, ".cache"
       system "make"
+      bin.install "mos"
       prefix.install_metafiles
     end
   end

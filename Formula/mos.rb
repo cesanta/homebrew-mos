@@ -54,7 +54,8 @@ class Mos < Formula
       system "govendor", "sync"
       FileUtils.rm_f(cachefile)
       system "tar", "-C", buildpath, "-cf", cachefile, ".cache"
-      system "make"
+      system "make", "generate"
+      system "go", "build", "-o", bin/"mos"
       prefix.install_metafiles
     end
   end
