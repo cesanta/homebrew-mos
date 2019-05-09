@@ -12,6 +12,7 @@ class MosLatest < Formula
   bottle do
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos-latest"
     cellar :any
+    sha256 "6d6aaf9e5c44f85fb5267efce5faf96a68f1abdc75cf52589d30b91c18b5a380" => :mojave
   end
   # update_hb end
 
