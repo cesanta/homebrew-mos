@@ -22,7 +22,7 @@ class MosLatest < Formula
   depends_on "govendor" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "python3" => :build
   depends_on "rsync" => :build
 
   conflicts_with "mos", :because => "Use mos or mos-latest, not both"
