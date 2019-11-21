@@ -6,13 +6,13 @@ class MosLatest < Formula
   homepage "https://mongoose-os.com/"
   url "https://github.com/mongoose-os/mos/archive/51708b2e2b38aac455a0a04045f73e37ba171768.tar.gz"
   sha256 "828434f2e3ae5428be3a9d5b53911de95ea8eb480e7089b5dcc0d01859c419a6"
-  version "201911120022"
+  version "201911162313"
   head ""
 
   bottle do
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos-latest"
     cellar :any
-    sha256 "27bfb6671f5292ab2ab5c6b4b612c6f6a6220f0648a4fe6dbb5a256206d5b988" => :mojave # 201911120022
+    sha256 "a31c9418b114beb5b058bc1ecd101d9adc3937f17841a94fb821cc6de5148c1f" => :mojave # 201911162313
   end
   # update_hb end
 
