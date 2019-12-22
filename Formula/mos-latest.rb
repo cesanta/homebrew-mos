@@ -28,34 +28,27 @@ class MosLatest < Formula
   conflicts_with "mos", :because => "Use mos or mos-latest, not both"
 
   def install
-    ENV["GOPATH"] = buildpath
-    ENV["CGO_ENABLED"] = "1"
-    ENV["PATH"] += ":#{ENV["GOPATH"]}/bin"
-
-    path = buildpath/"src/cesanta.com"
-    path.install Dir["{*,.git}"]
-
-    cd path/"mos" do
+    cd buildpath do
       # The build will be performed not from a git repo, so we have to specify
       # version and build id manually. Use "brew" as a distro name so that mos
       # won't update itself.
       build_id = format("%s~brew", version)
-      File.open(path/"mos/pkg.version", "w") { |file| file.write(version) }
-      File.open(path/"mos/pkg.build_id", "w") { |file| file.write(build_id) }
+      File.open("pkg.version", "w") { |file| file.write(version) }
+      File.open("pkg.build_id", "w") { |file| file.write(build_id) }
 
       # GoVendor pulls a lot of packages, it makes sense to cache them between builds.
+      gopath = buildpath/"go"
       cachefile = "/tmp/mos-govendor-cache.tar"
       if(File.readable?(cachefile))
-        system "tar", "-C", buildpath, "-xf", cachefile
+        system "tar", "-C", gopath, "-xf", cachefile
       else
         ohai "Note: Go package cache does not exist, next step may take a long time"
       end
-      system "govendor", "sync"
-      FileUtils.rm_f(cachefile)
-      system "tar", "-C", buildpath, "-cf", cachefile, ".cache"
-      system "make"
+      system "make", "mos"
       bin.install "mos"
       prefix.install_metafiles
+      FileUtils.rm_f(cachefile)
+      system "tar", "-C", gopath, "-cf", cachefile, "go/.cache"
     end
   end
 
