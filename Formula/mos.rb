@@ -13,6 +13,7 @@ class Mos < Formula
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos"
     cellar :any
     sha256 "8ecfd9897e41f8c26e7110f6ace292dfc1344b6bdbc2f8849c2409a93157fccf" => :catalina # 2.17.0
+    sha256 "2d33f146c3b6cf9bc2162b0607ac17ba38011453d64e8d5f72fe1da6bf17acab" => :mojave # 2.17.0
   end
   # update_hb end
 
