@@ -4,15 +4,14 @@ class MosLatest < Formula
   # update_hb begin
   desc "Mongoose OS command-line tool (latest)"
   homepage "https://mongoose-os.com/"
-  url "https://github.com/mongoose-os/mos/archive/c375bb93da441de45b2a7b1d4911f243b0b52dfe.tar.gz"
-  sha256 "ebb21c59c2394a609afbf565575867928e2e1596106c34ec95257c736ccd8fc3"
-  version "202008031153"
+  url "https://github.com/mongoose-os/mos/archive/0742f2d0089ff782292fb93af65e4d77370a642e.tar.gz"
+  sha256 "633b0c490adcf8f8469334faff558afae453b5855e7955013a5e7ba078c8a744"
+  version "202008031227"
   head ""
 
   bottle do
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos-latest"
     cellar :any
-    sha256 "1b45f229d247d03922c80c824e4a4bf2c81af7abd3d3a2b46d88db8fdcc9a1be" => :catalina # 202008031153
   end
   # update_hb end
 
