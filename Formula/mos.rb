@@ -21,11 +21,9 @@ class Mos < Formula
   depends_on "libusb"
   depends_on "libusb-compat"
   depends_on "go" => :build
-  depends_on "govendor" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on "python3" => :build
-  depends_on "rsync" => :build
 
   conflicts_with "mos-latest", :because => "Use mos or mos-latest, not both"
 
@@ -38,19 +36,9 @@ class Mos < Formula
       File.open("pkg.version", "w") { |file| file.write(version) }
       File.open("pkg.build_id", "w") { |file| file.write(build_id) }
 
-      # GoVendor pulls a lot of packages, it makes sense to cache them between builds.
-      gopath = buildpath/"go"
-      cachefile = "/tmp/mos-govendor-cache.tar"
-      if(File.readable?(cachefile))
-        system "tar", "-C", gopath, "-xf", cachefile
-      else
-        ohai "Note: Go package cache does not exist, next step may take a long time"
-      end
       system "make", "mos"
       bin.install "mos"
       prefix.install_metafiles
-      FileUtils.rm_f(cachefile)
-      system "tar", "-C", gopath, "-cf", cachefile, ".cache"
     end
   end
 
