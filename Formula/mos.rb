@@ -4,8 +4,8 @@ class Mos < Formula
   # update_hb begin
   desc "Mongoose OS command-line tool"
   homepage "https://mongoose-os.com/"
-  url "https://github.com/mongoose-os/mos/archive/c73dfaae92288ffad22187ab1a1e12e61c32e258.tar.gz"
-  sha256 "8713387b85f4a868c79e72261828bae18a4e3a1d93438599b6c27f186e54f918"
+  url "https://github.com/mongoose-os/mos/archive/1ec85951e77649f1151bc06a12901faa784a991a.tar.gz"
+  sha256 "1d95538be29219a487ec21724f65ca9e4ab28341e2a722ac6dd6abd249560583"
   version "2.18.0"
   head ""
 
