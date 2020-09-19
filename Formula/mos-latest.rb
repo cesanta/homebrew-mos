@@ -16,6 +16,8 @@ class MosLatest < Formula
   end
   # update_hb end
 
+  head "https://github.com/mongoose-os/mos.git"
+
   depends_on "libftdi"
   depends_on "libusb"
   depends_on "libusb-compat"
