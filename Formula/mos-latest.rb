@@ -5,9 +5,10 @@ class MosLatest < Formula
   desc "Mongoose OS command-line tool (latest)"
   homepage "https://mongoose-os.com/"
   url "https://github.com/mongoose-os/mos/archive/d2abac8cbc0fab748d18ff0ebd01e23cd895e547.tar.gz"
-  sha256 "5a1847c3b76adcdcbc6dc17f4aaff700d5810f193589f7684857027ae3b8c756"
   version "202012121701"
-  head ""
+  sha256 "5a1847c3b76adcdcbc6dc17f4aaff700d5810f193589f7684857027ae3b8c756"
+  license "Apache-2.0"
+  head "https://github.com/mongoose-os/mos.git"
 
   bottle do
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos-latest"
@@ -16,17 +17,15 @@ class MosLatest < Formula
   end
   # update_hb end
 
-  head "https://github.com/mongoose-os/mos.git"
-
-  depends_on "libftdi"
-  depends_on "libusb"
-  depends_on "libusb-compat"
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on "python3" => :build
+  depends_on "libftdi"
+  depends_on "libusb"
+  depends_on "libusb-compat"
 
-  conflicts_with "mos", :because => "Use mos or mos-latest, not both"
+  conflicts_with "mos", because: "use mos or mos-latest, not both"
 
   def install
     cd buildpath do
@@ -44,6 +43,12 @@ class MosLatest < Formula
   end
 
   test do
-    system bin/"mos", "version"
+    # Remove (latest) and hyphen
+    test_desc = desc[0...desc.rindex(" ")].tr("-", " ")
+    expected = "#{test_desc}\n"   \
+    "Version: #{version}\n"       \
+    "Build ID: #{version}~brew\n" \
+    "Update channel: latest\n"
+    assert_match expected, shell_output("#{bin}/mos version")
   end
 end
