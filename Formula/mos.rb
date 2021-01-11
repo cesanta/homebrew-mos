@@ -4,19 +4,18 @@ class Mos < Formula
   # update_hb begin
   desc "Mongoose OS command-line tool"
   homepage "https://mongoose-os.com/"
-  url "https://github.com/mongoose-os/mos/archive/2.18.0.tar.gz"
-  sha256 "46fa3902878dee9e21a94b2686b084f90f517a9175aa20b81d984811b227ef56"
+  url "https://github.com/mongoose-os/mos/archive/b8341b5dca25fe86d6e22ce3e574a9413bab9f74.tar.gz"
+  sha256 "487b4b06b1855eefeb715f6afa05a84794f5f2e7cfbe7c2b978ec6ab9ee2966f"
   license "Apache-2.0"
   head "https://github.com/mongoose-os/mos.git"
 
   livecheck do
-    url :stable
+  url "https://github.com/mongoose-os/mos/archive/b8341b5dca25fe86d6e22ce3e574a9413bab9f74.tar.gz"
   end
 
   bottle do
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos"
     cellar :any
-    sha256 "38d13ab2e6cef41dc0ea1fa70b40ba4964b079696f55362459a42fbbb2598cf0" => :catalina # 2.18.0
   end
   # update_hb end
 
