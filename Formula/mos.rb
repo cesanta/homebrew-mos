@@ -7,17 +7,15 @@ class Mos < Formula
   url "https://github.com/mongoose-os/mos/archive/9bf406d90c65fca0b377220940735015dcfbb76c.tar.gz"
   sha256 "f5a5ca320de4ea4c3cea63225423828338a77cfdcaec7d0777d38074b3abdcbe"
   license "Apache-2.0"
-  head "https://github.com/mongoose-os/mos.git"
-
-  livecheck do
-  url "https://github.com/mongoose-os/mos/archive/9bf406d90c65fca0b377220940735015dcfbb76c.tar.gz"
-  end
+  version "2.19.1"
 
   bottle do
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos"
     cellar :any
   end
   # update_hb end
+
+  head "https://github.com/mongoose-os/mos.git"
 
   depends_on "go" => :build
   depends_on "make" => :build

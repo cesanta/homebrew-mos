@@ -8,7 +8,6 @@ class MosLatest < Formula
   version "202102072216"
   sha256 "f5a5ca320de4ea4c3cea63225423828338a77cfdcaec7d0777d38074b3abdcbe"
   license "Apache-2.0"
-  head "https://github.com/mongoose-os/mos.git"
 
   bottle do
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos-latest"
@@ -16,6 +15,8 @@ class MosLatest < Formula
     sha256 "d93c6971ebd149d3b8c2fc76be7a1c87fab6377531794b45689cc0ee7fa8e368" => :catalina # 202102072216
   end
   # update_hb end
+
+  head "https://github.com/mongoose-os/mos.git"
 
   depends_on "go" => :build
   depends_on "make" => :build
