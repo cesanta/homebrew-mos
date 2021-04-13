@@ -1,22 +1,21 @@
 class MosLatest < Formula
   include Language::Python::Virtualenv
 
-  # update_hb begin
   desc "Mongoose OS command-line tool (latest)"
-  homepage "https://mongoose-os.com/"
-  url "https://github.com/mongoose-os/mos/archive/d7396d591b51904a049b757e6e41e822bba4503a.tar.gz"
-  version "202102201946"
-  sha256 "575d27ece5a45c0f7254e53dd3088d87297616a3f101d0f77c8d97c2cc157b8b"
   license "Apache-2.0"
+  homepage "https://mongoose-os.com/"
+  head "https://github.com/mongoose-os/mos.git"
+
+  # update_hb begin
+  version "202102201946"
+  url "https://github.com/mongoose-os/mos/archive/d7396d591b51904a049b757e6e41e822bba4503a.tar.gz"
+  sha256 "575d27ece5a45c0f7254e53dd3088d87297616a3f101d0f77c8d97c2cc157b8b"
 
   bottle do
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos-latest"
-    cellar :any
-    sha256 "f279081aed2ec15bc9911e4c1c1332209950e7ddb719be14debfdb0373f3948b" => :catalina # 202102201946
+    sha256 cellar: :any, catalina: "f279081aed2ec15bc9911e4c1c1332209950e7ddb719be14debfdb0373f3948b" # 202102201946
   end
   # update_hb end
-
-  head "https://github.com/mongoose-os/mos.git"
 
   depends_on "go" => :build
   depends_on "make" => :build
