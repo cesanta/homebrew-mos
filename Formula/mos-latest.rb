@@ -7,13 +7,12 @@ class MosLatest < Formula
   head "https://github.com/mongoose-os/mos.git"
 
   # update_hb begin
-  version "202110221249"
-  url "https://github.com/mongoose-os/mos/archive/6cd1353d20514933c9db7342aaa1c770c0fc753a.tar.gz"
-  sha256 "549dec3ae3a00dfee09eb2c98ae1f43416603dd96d7bb8f19f58814cd123b6d2"
+  version "202110222229"
+  url "https://github.com/mongoose-os/mos/archive/917564f48c8e89ee3fc8d69f6df9fe18f255953a.tar.gz"
+  sha256 "27e5e88a91a51394d0ad944e840fcc0c271eefb6dcb23f96899e10336450bfd7"
 
   bottle do
     root_url "https://mongoose-os.com/downloads/homebrew/bottles-mos-latest"
-    sha256 cellar: :any, big_sur: "e233de1ad4c466dd858e4583eac07652a27813768840cb6c91e04d175210a188" # 202110221249
   end
   # update_hb end
 
